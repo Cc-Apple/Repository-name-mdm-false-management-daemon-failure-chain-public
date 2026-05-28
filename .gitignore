@@ -1,0 +1,80 @@
+# Public repository ignore rules
+# Purpose:
+# Prevent accidental upload of raw logs, sysdiagnose archives, backups,
+# database artifacts, private screenshots, and local analysis output.
+
+# Raw iOS log archives / diagnostic archives
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.gz
+*.7z
+*.rar
+
+# iOS raw logs
+*.ips
+*.ips.ca.synced
+*.crash
+*.spin
+*.diag
+
+# iOS backup / forensic databases
+Manifest.db
+Manifest.plist
+Status.plist
+Info.plist
+DDNABackup.plist
+*.sqlite
+*.sqlite3
+*.db
+*.db-wal
+*.db-shm
+
+# Raw diagnostic / evidence folders
+logs/15G/*.zip
+logs/mini1/*.zip
+raw_logs/
+raw_artifacts/
+raw_debug/
+raw_sysdiagnose/
+debug/
+Debug/
+sysdiagnose/
+Sysdiagnose/
+diagnostics/
+Diagnostics/
+external_debug/
+external_sysdiagnose/
+
+# Private screenshots / media evidence
+*.heic
+*.HEIC
+*.jpg
+*.jpeg
+*.png
+*.mov
+*.mp4
+
+# Generated analysis output
+analysis_output/*.json
+analysis_output/*.csv
+analysis_output/*.txt
+!analysis_output/README.md
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.old
