@@ -1,0 +1,225 @@
+SHA256 Index
+Case: MDM-False Management Daemon Failure Chain
+Status: Public reference index
+Raw evidence included in this repository: No
+
+Purpose:
+This file records SHA256 hashes for the referenced raw log ZIP archives reviewed for this case.
+
+Boundary:
+These hashes identify preserved raw artifacts.
+The raw ZIP files are not included in this public repository.
+These hashes do not establish malware, payload, C2, exploit chain, attribution, attacker identity, or MDM enrollment.
+
+================================================================================
+15G
+===
+
+Date:
+2026-03-16
+
+Referenced filename:
+2026-03-16.zip
+
+SHA256:
+b632d8f855f0f9690f5adb606ed419a30dab0aaec4d6c8f8b21fbf2df3ae104d
+
+Role:
+Cluster 1 start
+
+Observed relevance:
+managedappdistributiond crash
+SFA family context
+BackgroundShortcutRunner / search / mail / resource-pressure context
+
+---
+
+Date:
+2026-03-17
+
+Referenced filename:
+2026-03-17.zip
+
+SHA256:
+74310591fe05bb35350e88d52a84168192349a71c5fbc8ea95ec363f4d26e695
+
+Role:
+Cluster 1 confirmation
+
+Observed relevance:
+MDMStatus:false
+managedappdistributiond crash
+SFA / CKKS / CloudServices context
+deleted / searchd / maild context
+
+---
+
+Date:
+2026-03-18
+
+Referenced filename:
+2026-03-18.zip
+
+SHA256:
+568866ea64f2775cad82fa9324ce5e91e7b9bd2e27496edd0f4778847476c211
+
+Role:
+Cluster 1 strongest date
+
+Observed relevance:
+MDMStatus:false
+managedappdistributiond multiple crashes
+dmd crash
+forceReset-full
+ScreenTime / ManagedSettings context
+SFA family in multiple windows
+
+---
+
+Date:
+2026-03-23
+
+Referenced filename:
+2026-03-23.zip
+
+SHA256:
+101f2e7f1f4e4488e8fb0c14c6e7f20a0a3b91d3cc599cf89c8ce91016a1fdf2
+
+Role:
+Cluster 2 start
+
+Observed relevance:
+MDMStatus:false
+managedappdistributiond multiple crashes
+forceReset-full
+maild crashes
+searchd crashes
+SFA / CKKS / CloudServices repeated across multiple windows
+
+---
+
+Date:
+2026-03-24
+
+Referenced filename:
+2026-03-24.zip
+
+SHA256:
+c16e40bcc00c8769bc8d35036ac163a6572c0b34c85a0264301782010ac32ee7
+
+Role:
+Cluster 2 confirmation
+
+Observed relevance:
+MDMStatus:false
+managedappdistributiond crash
+multiple forceReset-full artifacts
+ScreenTime / ManagedSettings context in forceReset
+SFA / CKKS / CloudServices
+CommCenter / Baseband context
+
+---
+
+Date:
+2026-05-05
+
+Referenced filename:
+2026-05-05.zip
+
+SHA256:
+abc6d099414b517fb966d12d4ff571d58c494e36a4cdb624184940e59c97bbd2
+
+Role:
+Follow-up anchor
+
+Observed relevance:
+MDMStatus:false
+managedappdistributiond crash cluster
+ScreenTimeAgent crash cluster
+CommCenter / Baseband / TelephonyBaseband context in Analytics
+BasebandPowerCycle context
+Preferences crash
+
+---
+
+Date:
+2026-05-21
+
+Referenced filename:
+2026-05-21.zip
+
+SHA256:
+b6a081fd8ce18dcd25006b2ce084849f55494335e646e23f6eacb5f4e13536be
+
+Role:
+Telecom / restriction crash anchor
+
+Observed relevance:
+MDMStatus:false
+CommCenter crash
+ScreenTimeAgent crashes
+FaceTime service crash
+contactsd crash
+JetsamEvent containing managedappdistributiond / dmd / ScreenTime / ManagedSettings / SFA / CommCenter
+SFA / CKKS / CloudServices in morning and evening windows
+CommCenter / Baseband / TelephonyBaseband context in Analytics
+
+================================================================================
+mini1
+=====
+
+Date:
+2026-04-03
+
+Referenced filename:
+mini1-2026-04-03.zip
+
+SHA256:
+fdb016ed7a74ef2e7a7ddf86fd6d2b74f353025636d1c0ad9675864f75cc51a4
+
+Role:
+Cross-device anchor
+
+Observed relevance:
+MDMStatus:false
+managedappdistributiond crashes
+ScreenTimeAgent crash
+Analytics with CommCenter / Baseband / SFA context
+stacks containing dmd / ScreenTime / ManagedSettings / CommCenter / Baseband
+SFA / CKKS / CloudServices later the same day
+
+================================================================================
+External debug / sysdiagnose handling
+=====================================
+
+Large debug or sysdiagnose archives are not stored directly in this public GitHub repository.
+
+Handling:
+Store separately in restricted storage or provide through a forensic reviewer secure upload method.
+
+Verification:
+If a raw artifact is later provided to a qualified reviewer, the reviewer should calculate SHA256 and compare it against this index before relying on the file.
+
+Preferred transfer:
+secure upload portal
+encrypted archive with separate password channel
+NDA / evidence-handling agreement
+controlled physical review if device-level examination is required
+
+================================================================================
+Boundary
+========
+
+This SHA256 index does not establish:
+malware
+payload
+C2
+exploit chain
+APT attribution
+state attribution
+Apple attribution
+criminal attribution
+attacker identity
+MDM enrollment
+
+This file supports evidence identification and later verification only.
