@@ -1,0 +1,179 @@
+case:
+id: "mdm-false-management-daemon-failure-chain"
+status: "public_summary"
+raw_evidence_included: false
+
+repository_boundary:
+public_repository_contains:
+- "written technical summaries"
+- "timeline summaries"
+- "device matrix"
+- "artifact indexes"
+- "SHA256 references"
+- "referenced log titles"
+- "forensic review questions"
+- "non-attribution statement"
+- "raw artifact handling policy"
+- "reviewer quick-start notes"
+- "reproducibility / analysis script"
+
+public_repository_excludes:
+- "raw iOS logs"
+- "raw log ZIP archives"
+- "raw sysdiagnose archives"
+- "large debug archives"
+- "Manifest.db files"
+- "iMazing backup folders"
+- "BSSID values"
+- "Apple ID values"
+- "banking records"
+- "OTP records"
+- "private screenshots"
+
+core_observation:
+summary: "MDMStatus:false repeatedly appears on days where management-adjacent daemons and restriction-related services fail, crash, or cluster together."
+mdm_enrollment_claim: false
+malware_claim: false
+attribution_claim: false
+requires_qualified_forensic_review: true
+
+devices:
+
+* label: "15G"
+  physical_class: "iPhone 12 mini class device"
+  observed_model_identifier: "iPhone13,1"
+  observed_os_generation: "iPhone OS 18.5 / 22F76"
+  note: "15G is an internal Ghost / Apple ID lineage label. It does not mean the physical device is an iPhone 15 Pro."
+  reviewed_dates:
+
+  * date: "2026-03-16"
+    role: "Cluster 1 start"
+  * date: "2026-03-17"
+    role: "Cluster 1 confirmation"
+  * date: "2026-03-18"
+    role: "Cluster 1 strongest date"
+  * date: "2026-03-23"
+    role: "Cluster 2 start"
+  * date: "2026-03-24"
+    role: "Cluster 2 confirmation"
+  * date: "2026-05-05"
+    role: "Follow-up anchor"
+  * date: "2026-05-21"
+    role: "Telecom / restriction crash anchor"
+
+* label: "mini1"
+  physical_class: "iPhone 12 mini class device"
+  observed_model_identifier: "iPhone13,1"
+  observed_os_generation: "iPhone OS 18.5 / 22F76"
+  note: "mini1 is included as a cross-device replication anchor."
+  reviewed_dates:
+
+  * date: "2026-04-03"
+    role: "Cross-device anchor"
+
+referenced_raw_archives:
+"15G":
+- filename: "2026-03-16.zip"
+sha256: "b632d8f855f0f9690f5adb606ed419a30dab0aaec4d6c8f8b21fbf2df3ae104d"
+role: "Cluster 1 start"
+
+```
+- filename: "2026-03-17.zip"
+  sha256: "74310591fe05bb35350e88d52a84168192349a71c5fbc8ea95ec363f4d26e695"
+  role: "Cluster 1 confirmation"
+
+- filename: "2026-03-18.zip"
+  sha256: "568866ea64f2775cad82fa9324ce5e91e7b9bd2e27496edd0f4778847476c211"
+  role: "Cluster 1 strongest date"
+
+- filename: "2026-03-23.zip"
+  sha256: "101f2e7f1f4e4488e8fb0c14c6e7f20a0a3b91d3cc599cf89c8ce91016a1fdf2"
+  role: "Cluster 2 start"
+
+- filename: "2026-03-24.zip"
+  sha256: "c16e40bcc00c8769bc8d35036ac163a6572c0b34c85a0264301782010ac32ee7"
+  role: "Cluster 2 confirmation"
+
+- filename: "2026-05-05.zip"
+  sha256: "abc6d099414b517fb966d12d4ff571d58c494e36a4cdb624184940e59c97bbd2"
+  role: "Follow-up anchor"
+
+- filename: "2026-05-21.zip"
+  sha256: "b6a081fd8ce18dcd25006b2ce084849f55494335e646e23f6eacb5f4e13536be"
+  role: "Telecom / restriction crash anchor"
+```
+
+"mini1":
+- filename: "mini1-2026-04-03.zip"
+sha256: "fdb016ed7a74ef2e7a7ddf86fd6d2b74f353025636d1c0ad9675864f75cc51a4"
+role: "Cross-device anchor"
+
+observed_component_families:
+mdm_negative_status:
+- "MDMStatus:false"
+- "MDMEnrollmentStatus_Powerlog"
+- "PowerlogMDMEnrollmentStatus"
+
+management_adjacent:
+- "managedappdistributiond"
+- "dmd"
+
+restriction_related:
+- "ScreenTimeAgent"
+- "ScreenTime"
+- "ManagedSettings"
+
+telecom_baseband:
+- "CommCenter"
+- "Baseband"
+- "TelephonyBaseband"
+- "BasebandPowerCycle"
+
+account_cloud:
+- "SFA"
+- "CKKS"
+- "CloudServices"
+
+co_location_artifacts:
+- "forceReset"
+- "stacks"
+- "JetsamEvent"
+
+high_priority_dates:
+
+* "2026-03-18 / 15G"
+* "2026-03-23 / 15G"
+* "2026-03-24 / 15G"
+* "2026-04-03 / mini1"
+* "2026-05-05 / 15G"
+* "2026-05-21 / 15G"
+
+working_interpretation:
+summary: "The observed structure is consistent with a management-adjacent failure chain operating while normal MDM enrollment indicators remain false."
+confidence_boundary: "working hypothesis only"
+requires_formal_review: true
+
+not_established:
+
+* "malware"
+* "payload"
+* "C2"
+* "exploit chain"
+* "APT attribution"
+* "state attribution"
+* "Apple attribution"
+* "criminal attribution"
+* "attacker identity"
+* "MDM enrollment"
+
+primary_review_question: "Can repeated MDMStatus:false observations normally coexist with repeated management-adjacent daemon failures across more than one device, or does this structure justify deeper mobile forensic review?"
+
+evidence_handling:
+raw_artifacts_preserved_separately: true
+sha256_index: "evidence_index/sha256_index.txt"
+preferred_transfer_methods:
+- "secure upload portal provided by the reviewer"
+- "encrypted archive with password shared through a separate channel"
+- "formal evidence-handling agreement"
+- "NDA if required"
+- "controlled physical review if device-level examination is required"
