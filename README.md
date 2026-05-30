@@ -291,7 +291,7 @@ Preferred options:
 - NDA if required
 - controlled physical review if device-level examination is required
 
-- ---
+---
 
 ## Shadow Cloud Hypothesis Mapping
 
